@@ -6,9 +6,9 @@
 const Anthropic = require('@anthropic-ai/sdk');
 const OpenAI = require('openai');
 
-// Initialize Anthropic client
+// Initialize Anthropic client (check both env var names for compatibility)
 const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY || '',
+  apiKey: process.env.ANTHROPIC_API_KEY || process.env.CLAUDE_API_KEY || '',
 });
 
 // Initialize OpenAI client (backup/voice processing)
